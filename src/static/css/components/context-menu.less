@@ -1,0 +1,152 @@
+@nav-background: #ffffff;
+@nav-color: #606266;
+@nav-hover-color: #42c57a;
+@nav-bd-color:#e4e7ed;
+@ic-close-background:#f1f1f1;
+
+.context_menu {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  &_control {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: auto;
+    box-sizing: border-box;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+  // 左右切换
+  &_tabs {
+    position: absolute;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 40px;
+    &.prev {
+      left: 0;
+    }
+    &.next {
+      right: 0;
+    }
+    &:hover {
+      font-size: 24px;
+    }
+  }
+  // 清除全部
+  &_btn {
+    position: relative;
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 50px;
+    height: 45px;
+    text-align: center;
+    vertical-align: bottom;
+    cursor: pointer;
+    border-right: 1px solid #dddddd;
+    padding-top: 2px;
+    span {
+      &:hover {
+        font-weight: 600;
+      }
+    }
+  }
+  .icon_delete {
+    background: url('../../images/ic-nav/qingkong.png');
+    background-size: cover;
+  }
+  .ts_icon {
+    i {
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-top: -3px;
+    }
+  }
+  // tab固定容器
+  &_nav {
+    overflow: hidden;
+  }
+  // tab超出固定容器
+  .is_scroll {
+    box-sizing: border-box;
+    padding: 0 20px;
+  }
+  // tab自适应容器
+  .navlist {
+    overflow: hidden;
+    border-radius: 4px 4px 0 0;
+    white-space: nowrap;
+    float: left;
+    transition: transform 0.3s;
+    &_item {
+      border: 1px solid #d8dce5;
+      margin-right: 5px;
+      position: relative;
+      padding: 0 20px;
+      display: inline-block;
+      font-size: 12px;
+      height: 30px;
+      line-height: 28px;
+      font-weight: 500;
+      box-sizing: border-box;
+      background-color: @nav-background;
+      color: @nav-color;
+      cursor: pointer;
+      &:hover > span {
+        color: @nav-hover-color;
+      }
+      .ic_close {
+        width: 14px;
+        margin-left: 5px;
+        font-size: 14px;
+        height: 14px;
+        line-height: 14px;
+        overflow: hidden;
+        vertical-align: sub;
+        border-radius: 50%;
+        &:hover {
+          font-weight: 700;
+          background-color: @ic-close-background;
+          color: @nav-hover-color;
+        }
+      }
+      &:not(:first-child) {
+        &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 0;
+          // border-left: 1px solid @nav-bd-color;
+          height: 20px;
+          width: 0;
+          transform: translateY(-50%);
+        }
+      }
+      &.is_closable {
+        padding: 0 12px 0 20px;
+      }
+      &.is_current {
+        background: #42c57a;
+        &::before {
+          // content: '❤';
+          content: '●';
+          color: #ffffff;
+          position: absolute;
+          top: 0;
+          left: 6px;
+          height: 20px;
+          width: 0;
+        }
+        span,
+        .ic_close {
+          color: #ffffff;
+        }
+      }
+      &.clearall {
+        border-right: 1px solid @nav-bd-color;
+      }
+    }
+  }
+}

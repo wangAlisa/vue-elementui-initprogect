@@ -1,0 +1,6 @@
+build/*.js
+src/main.js
+src/common
+src/config
+src/utils
+build.sh

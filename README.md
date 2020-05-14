@@ -2,7 +2,7 @@
  * @Author: wanglijuan01
  * @Date: 2020-02-29 10:46:43
  * @LastEditors: wanglijuan01
- * @LastEditTime: 2020-03-04 12:39:56
+ * @LastEditTime: 2020-05-14 11:35:38
  * @Description: readme
  -->
 # init-project
@@ -17,9 +17,9 @@ yarn install
 ```
 yarn serve
 ```
-## docker/test环境接口
+## 开发环境接口
 ```
-npm run dev 服务器名称 eg:npm run dev juzi-docker/npm run dev test296
+npm run dev 服务器名称 eg:npm run dev juzi
 ```
 
 ### Compiles and minifies for production
@@ -39,9 +39,6 @@ yarn build --config 服务器名称 eg:yarn build --config test296
 ```
 yarn lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## 接口请求service
 1. get示例

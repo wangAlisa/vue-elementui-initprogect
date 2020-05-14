@@ -1,0 +1,151 @@
+@midIndex: 999;
+@maxIndex: 999;
+
+@drawer-time: 0.35s;
+@drawer-func: ease;
+
+// 共同的 drawer 最终位置和动画
+.commonDrawerAnimation() {
+  transition: transform @drawer-time @drawer-func;
+}
+.commonDrawerPos() {
+  transform: translate(0, 0);
+  .commonDrawerAnimation;
+}
+
+.drawer-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: @midIndex;
+  background-color: #000000;
+}
+
+.drawer-content {
+  min-height: 50px;
+  position: fixed;
+  z-index: @maxIndex;
+  overflow: auto;
+  visibility: visible;
+  background-color: #ffffff;
+  border-radius: 2px;
+  box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12);
+  .drawer-header {
+    height: 50px;
+    line-height: 50px;
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    text-align: center;
+    border-bottom: 1px solid #d8dce5;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 0 3px 0 rgba(0, 0, 0, 0.04);
+    z-index: @maxIndex;
+    .drawer_title {
+      font-size: 18px;
+      font-weight: bold;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+    .el-icon-close {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 8px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  }
+}
+
+.drawer-pos-overall {
+  width: 90%;
+  height: 90%;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  // 控制动画的最终效果
+  transform: scale(1);
+  opacity: 1;
+  transition: transform @drawer-time @drawer-func, opacity @drawer-time @drawer-func;
+}
+
+.drawer-pos-right {
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow-x: hidden;
+  .commonDrawerPos;
+}
+
+.drawer-pos-left {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow-x: hidden;
+  .commonDrawerPos;
+}
+
+.drawer-pos-bottom {
+  right: 0;
+  left: 0;
+  bottom: 0;
+  max-height: 500px;
+  overflow-y: hidden;
+  .commonDrawerPos;
+}
+
+.drawer-pos-top {
+  right: 0;
+  top: 0;
+  left: 0;
+  max-height: 500px;
+  overflow-y: hidden;
+  .commonDrawerPos;
+}
+
+// 右侧抽屉动画
+.slide-right {
+  &-enter,
+  &-leave-to {
+    transform: translate(100%, 0);
+    .commonDrawerAnimation;
+  }
+}
+
+.slide-left {
+  &-enter,
+  &-leave-to {
+    transform: translate(-100%, 0);
+    .commonDrawerAnimation;
+  }
+}
+
+.slide-bottom {
+  &-enter,
+  &-leave-to {
+    transform: translate(0, 100%);
+    .commonDrawerAnimation;
+  }
+}
+
+.slide-top {
+  &-enter,
+  &-leave-to {
+    transform: translate(0, -100%);
+    .commonDrawerAnimation;
+  }
+}
+
+// 中间覆盖动画
+.slide-overall {
+  &-enter,
+  &-leave-to {
+    transform: scale(0.7);
+    opacity: 0;
+    transition: transform @drawer-time @drawer-func, opacity @drawer-time @drawer-func;
+  }
+}

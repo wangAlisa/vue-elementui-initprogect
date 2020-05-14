@@ -1,0 +1,53 @@
+/**
+ * 已经含有的动画
+ * 1. cube-left cube-right cube-top cube-bottom 方块动画
+ * 2. slide 幻灯片动画
+ * 3. move-left move-right // 移动动画
+ * 4. fade-move-left fade-move-right // 淡入移动动画
+ * 5. move-left-async move-right-async // 异步移动动画
+ * 6. pull-push-left pull-push-right // 推拉动画
+ * 7. pull-move-left pull-move-right // 拉移动画
+ * 8. move-push-left move-push-right // 移推动画
+ * 9. sides // 边动画
+ * 10. fade 淡入
+ */
+
+@import './cube-animation.less';
+@import './slide-animation.less';
+@import './move-animation.less';
+@import './message-animation.less';
+
+@fade-time: .7s;
+@fade-function: ease;
+@fade-mode: both;
+@fade-common-time: .5s;
+
+// 视觉残留 fade
+@keyframes fadeIn {
+	from { opacity: 0.3; }
+}
+@keyframes fadeOut {
+	to { opacity: 0.3; }
+}
+
+// 最为通用的淡入淡出
+@keyframes fadeCommon {
+	from { opacity: 0.3; transform: translateX(-30px); }
+}
+
+// 残留版
+.fade {
+  &-enter-active {
+		animation: fadeIn @fade-time @fade-function @fade-mode;
+	}
+	&-leave-active {
+		animation: fadeOut @fade-time @fade-function @fade-mode;
+	}
+}
+
+// 非残留版
+.fade-common {
+	&-enter-active {
+		animation: fadeCommon @fade-common-time @fade-function @fade-mode;
+	}
+}

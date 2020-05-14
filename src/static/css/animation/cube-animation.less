@@ -1,0 +1,89 @@
+/* 立方体动画 */
+// 左入左出
+@keyframes cubeLeftIn {
+	0% { transform: translateX(100%) rotateY(90deg); }
+	50% { animation-timing-function: ease-out;  transform: translateX(50%) translateZ(-800px) rotateY(45deg); }
+}
+@keyframes cubeLeftOut {
+	50% { animation-timing-function: ease-out;  transform: translateX(-50%) translateZ(-800px) rotateY(-45deg); }
+	100% { transform: translateX(-100%) rotateY(-90deg); }
+}
+
+// 右入右出
+@keyframes cubeRightIn {
+	0% { opacity: .3; transform: translateX(-100%) rotateY(-90deg); }
+	50% { animation-timing-function: ease-out; transform: translateX(-50%) translateZ(-800px) rotateY(-45deg) }
+}
+@keyframes cubeRightOut {
+	50% { animation-timing-function: ease-out; transform: translateX(50%) translateZ(-800px) rotateY(45deg) }
+	100% { opacity: .3; transform: translateX(100%) rotateY(90deg); }
+}
+
+// 上入上出
+@keyframes cubeTopIn {
+	0% { opacity: .3; transform: translateY(100%) rotateX(-90deg); }
+	50% { animation-timing-function: ease-out; transform: translateY(50%) translateZ(-800px) rotateX(-45deg); }
+}
+@keyframes cubeTopOut {
+	50% { animation-timing-function: ease-out; transform: translateY(-50%) translateZ(-800px) rotateX(45deg); }
+	100% { opacity: .3; transform: translateY(-100%) rotateX(90deg); }
+}
+
+// 下入下出
+@keyframes cubeBottomIn {
+	0% { opacity: .3; transform: translateY(-100%) rotateX(90deg); }
+	50% { animation-timing-function: ease-out; transform: translateY(-50%) translateZ(-800px) rotateX(45deg); }
+}
+@keyframes cubeBottomOut {
+	50% { animation-timing-function: ease-out; transform: translateY(50%) translateZ(-800px) rotateX(-45deg); }
+	100% { opacity: .3; transform: translateY(100%) rotateX(-90deg); }
+}
+
+// 方块动画的时间和速度曲线
+@cube-duration: .6s;
+@cube-function: ease-in;
+@cube-mode: both;
+
+.cube-left {
+	&-enter-active {
+		transform-origin: 0% 50%;
+		animation: cubeLeftIn @cube-duration @cube-function @cube-mode;
+	}
+	&-leave-active {
+		transform-origin: 100% 50%;
+		animation: cubeLeftOut @cube-duration @cube-function @cube-mode;
+	}
+}
+
+.cube-right {
+	&-enter-active {
+		transform-origin: 100% 50%;
+		animation: cubeRightIn @cube-duration @cube-function @cube-mode;
+	}
+	&-leave-active {
+		transform-origin: 0% 50%;
+		animation: cubeRightOut @cube-duration @cube-function @cube-mode;
+	}
+}
+
+.cube-top {
+	&-enter-active {
+		transform-origin: 50% 0%;
+		animation: cubeTopIn @cube-duration @cube-function @cube-mode;
+	}
+	&-leave-active {
+		transform-origin: 50% 100%;
+		animation: cubeTopOut @cube-duration @cube-function @cube-mode;
+	}
+}
+
+.cube-bottom {
+	&-enter-active {
+		transform-origin: 50% 100%;
+		animation: cubeBottomIn @cube-duration @cube-function @cube-mode;
+	}
+	&-leave-active {
+		transform-origin: 50% 0%;
+		animation: cubeBottomOut @cube-duration @cube-function @cube-mode;
+	}
+}

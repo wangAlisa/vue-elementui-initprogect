@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>41_Nonepage/theme1/theme1-nonepage-12</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M28,18 L32,18 L32,30 L28,30 L28,18 Z M48,18 L52,18 L52,30 L48,30 L48,25 L48,18 Z" id="path-1"></path>
+        <filter x="-8.3%" y="-16.7%" width="116.7%" height="133.3%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="2" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <rect id="path-3" x="17" y="28" width="46" height="32" rx="4"></rect>
+        <filter x="-4.3%" y="-6.2%" width="108.7%" height="112.5%" filterUnits="objectBoundingBox" id="filter-4">
+            <feOffset dx="2" dy="2" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <rect id="path-5" x="20" y="16" width="40" height="6" rx="3"></rect>
+        <filter x="-5.0%" y="-33.3%" width="110.0%" height="166.7%" filterUnits="objectBoundingBox" id="filter-6">
+            <feOffset dx="2" dy="2" in="SourceAlpha" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 1   0 0 0 0 1  0 0 0 1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="41_Nonepage/theme1/theme1-nonepage-12" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" fill="#F5F8FC" cx="40" cy="40" r="40"></circle>
+        <rect id="Rectangle-Copy-9" fill="#E6EBF5" x="15" y="62" width="50" height="4" rx="2"></rect>
+        <rect id="Rectangle-Copy-8" fill="#E6EBF5" x="19" y="57" width="42" height="4" rx="2"></rect>
+        <g id="Combined-Shape">
+            <use fill="#EFF2F7" fill-rule="evenodd" xlink:href="#path-1"></use>
+            <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+            <use stroke="#CAD2E0" stroke-width="2" xlink:href="#path-1"></use>
+        </g>
+        <g id="矩形">
+            <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-3"></use>
+            <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+            <use stroke="#CFD7E6" stroke-width="2" xlink:href="#path-3"></use>
+        </g>
+        <path d="M22,31 L58,31 C59.1045695,31 60,31.8954305 60,33 L60,55 C60,56.1045695 59.1045695,57 58,57 L22,57 C20.8954305,57 20,56.1045695 20,55 L20,33 C20,31.8954305 20.8954305,31 22,31 Z" id="矩形" fill="#FFFFFF" fill-rule="nonzero"></path>
+        <g id="矩形">
+            <use fill="#EFF2F7" fill-rule="evenodd" xlink:href="#path-5"></use>
+            <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+            <use stroke="#CFD7E6" stroke-width="2" xlink:href="#path-5"></use>
+        </g>
+        <text id="CLASS" font-family="HelveticaNeue-Bold, Helvetica Neue" font-size="10" font-weight="bold" fill="#CFD7E6">
+            <tspan x="23" y="48">CLASS</tspan>
+        </text>
+    </g>
+</svg>

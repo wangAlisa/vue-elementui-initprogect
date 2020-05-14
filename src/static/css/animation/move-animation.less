@@ -1,0 +1,174 @@
+// 单纯的移动动画
+// 向左入
+@keyframes moveToLeft {
+	to { transform: translateX(-100%); }
+}
+@keyframes moveFromLeft {
+	from { transform: translateX(-100%); }
+}
+// 向右入
+@keyframes moveToRight {
+	to { transform: translateX(100%); }
+}
+@keyframes moveFromRight {
+	from { transform: translateX(100%); }
+}
+
+// 都带有透明度的动画
+// 向左淡入
+@keyframes moveToLeftFade {
+	to { opacity: 0.3; transform: translateX(-100%); }
+}
+@keyframes moveFromLeftFade {
+	from { opacity: 0.3; transform: translateX(-100%); }
+}
+// 向右淡入
+@keyframes moveToRightFade {
+	to { opacity: 0.3; transform: translateX(100%); }
+}
+@keyframes moveFromRightFade {
+	from { opacity: 0.3; transform: translateX(100%); }
+}
+
+// 左右推出
+@keyframes pushLeft {
+	to { opacity: 0; transform: rotateY(90deg); }
+}
+@keyframes pushRight {
+	to { opacity: 0; transform: rotateY(-90deg); }
+}
+
+// 左右拉入
+@keyframes pullRight {
+	from { opacity: 0; transform: rotateY(-90deg); }
+}
+@keyframes pullLeft {
+	from { opacity: 0; transform: rotateY(90deg); }
+}
+
+// 动画设置
+@move-time: .7s;
+@move-function: ease;
+@move-function-async-in: ease-out;
+@move-function-async-out: ease-in;
+@move-mode: both;
+
+// 单纯的移入移除动画
+.move-left {
+	&-enter-active {
+		animation: moveFromLeft @move-time @move-function @move-mode;
+	}
+	&-leave-active {
+		animation: moveToRight @move-time @move-function @move-mode;
+	}
+}
+.move-right {
+	&-enter-active {
+		animation: moveFromRight @move-time @move-function @move-mode;
+	}
+	&-leave-active {
+		animation: moveToLeft @move-time @move-function @move-mode;
+	}
+}
+
+// 带透明度的移入移除动画
+.fade-move-left {
+  &-enter-active {
+		animation: moveFromLeftFade @move-time @move-function @move-mode;
+	}
+	&-leave-active {
+		animation: moveToRightFade @move-time @move-function @move-mode;
+	}
+}
+.fade-move-right {
+	&-enter-active {
+		animation: moveFromRightFade @move-time @move-function @move-mode;
+	}
+	&-leave-active {
+		animation: moveToLeftFade @move-time @move-function @move-mode;
+	}
+}
+
+// 非同步的移入移除动画
+.move-left-async {
+	&-enter-active {
+		animation: moveFromLeft @move-time @move-function-async-in @move-mode;
+	}
+	&-leave-active {
+		animation: moveToRight @move-time @move-function-async-out @move-mode;
+	}
+}
+.move-right-async {
+	&-enter-active {
+		animation: moveFromRight @move-time @move-function-async-in @move-mode;
+	}
+	&-leave-active {
+		animation: moveToLeft @move-time @move-function-async-out @move-mode;
+	}
+}
+
+// 推拉模式
+.pull-push-left {
+	&-enter-active {
+		transform-origin: 100% 50%;
+		animation: pullRight @move-time @move-function @move-mode;
+	}
+	&-leave-active {
+		transform-origin: 0% 50%;
+		animation: pushLeft @move-time @move-function @move-mode;
+	}
+}
+.pull-push-right {
+	&-enter-active {
+		transform-origin: 0% 50%;
+		animation: pullLeft @move-time @move-function @move-mode;
+	}
+	&-leave-active {
+		transform-origin: 100% 50%;
+		animation: pushRight @move-time @move-function @move-mode;
+	}
+}
+
+// 推移模式
+.pull-move-left {
+	&-enter-active {
+		transform-origin: 100% 50%;
+		animation: pullRight @move-time @move-function @move-mode;
+	}
+	&-leave-active {
+		transform-origin: 0% 50%;
+		animation: moveToLeft @move-time @move-function @move-mode;
+	}
+}
+.pull-move-right {
+	&-enter-active {
+		transform-origin: 0% 50%;
+		animation: pullLeft @move-time @move-function @move-mode;
+	}
+	&-leave-active {
+		transform-origin: 100% 50%;
+		animation: moveToRight @move-time @move-function @move-mode;
+	}
+}
+
+// 拉移模式
+.move-push-left {
+	&-enter-active {
+		transform-origin: 100% 50%;
+		animation: moveFromRight @move-time @move-function @move-mode;
+	}
+	&-leave-active {
+		transform-origin: 0% 50%;
+		animation: pushLeft @move-time @move-function @move-mode;
+	}
+}
+.move-push-right {
+	&-enter-active {
+		transform-origin: 0% 50%;
+		animation: moveFromLeft @move-time @move-function @move-mode;
+	}
+	&-leave-active {
+		transform-origin: 100% 50%;
+		animation: pushRight @move-time @move-function @move-mode;
+	}
+}
